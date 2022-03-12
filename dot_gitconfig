@@ -1,0 +1,7 @@
+[init]
+	defaultbranch = maine
+[user]
+	email = eli@eli.td
+	name = Eli T. Drumm
+[pull]
+	rebase = false
