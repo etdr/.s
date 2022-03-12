@@ -1,0 +1,65 @@
+
+zstyle :compinstall filename '/home/winfield/.zshrc1'
+
+autoload -Uz compinit && compinit
+
+setopt autocd
+setopt interactivecomments
+
+setopt incappendhistory
+setopt histignorealldups
+setopt extendedhistory
+export HISTFILE=~/.histfile
+export HISTSIZE=60000
+export SAVEHIST=60000
+
+autoload -U promptinit && promptinit
+autoload -U +X bashcompinit && bashcompinit
+
+setopt promptsubst
+#PROMPT=$' %F{yellow}%~%f%B%F{cyan}\U300B %f%b'
+#PROMPT=$'%F{green}%m%f%B%F{cyan}\U300B %f%b%F{yellow}%~%f%B%F{cyan}\U2771 %f%b'
+PROMPT=$'%F{green}%(#.%K{red}%m%k.%m)%f%B%F{cyan}\U300B %f%b%F{yellow}%(4~.\U2025/%3~.%~)%f%B%F{cyan}\U2771 %f%b'
+
+# add \n between prompts/outputs
+precmd () { print '' }
+
+
+
+source ~/.zshrc.d/vars.sh
+
+
+
+source /usr/share/fzf/key-bindings.zsh
+source /usr/share/fzf/completion.zsh
+
+
+
+
+
+
+# ALII (ALIASES)
+for file in ~/.zshrc.d/alii/*; do
+  source "$file"
+done
+
+# FUNCTIONS
+for file in ~/.zshrc.d/functions/*; do
+  source "$file"
+done
+
+# KEY STUFF
+for file in ~/.zshrc.d/keys/*; do
+  source "$file"
+done
+
+# TOOLS
+for file in ~/.zshrc.d/tools/*; do
+  source "$file"
+done
+
+
+
+
+# zsh-highlighting wants to be sorted last
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
