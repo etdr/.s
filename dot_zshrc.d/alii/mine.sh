@@ -1,3 +1,5 @@
+alias u='micro'
+
 alias sysgr='systemctl | grep'
 
 #alias dbx="dropbox-cli"

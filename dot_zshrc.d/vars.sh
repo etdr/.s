@@ -1,3 +1,5 @@
+export PATH="${PATH}:/home/winfield/scripts:/home/winfield/bin:/home/winfield/apps:"
+
 export EDITOR='micro'
 
 export XDG_DATA_HOME=/home/winfield/.local/share
