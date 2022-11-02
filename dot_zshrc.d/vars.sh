@@ -12,3 +12,7 @@ export GBM_BACKEND=nvidia-drm
 export __GLX_VENDOR_LIBRARY_NAME=nvidia
 export GLX_VENDOR_LIBRARY_NAME=nvidia
 export QT_QPA_PLATFORM=wayland
+
+#export DBUS_SESSION_BUS_ADDRESS=unix:path=/run/usr/1000/bus
+
+export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"

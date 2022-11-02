@@ -13,3 +13,6 @@ alias du1='du --max-depth=1'
 #alias openports='ss --all --numeric --processes --ipv4 --ipv6'
 
 # }}}
+
+
+alias pacmd='pactl'
