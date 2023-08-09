@@ -26,9 +26,6 @@ precmd () { print '' }
 
 
 
-source ~/.zshrc.d/vars.sh
-
-
 
 source /usr/share/fzf/key-bindings.zsh
 source /usr/share/fzf/completion.zsh
@@ -39,25 +36,29 @@ source /usr/share/fzf/completion.zsh
 
 
 # ALII (ALIASES)
-for file in ~/.zshrc.d/alii/*; do
-  source "$file"
-done
+# for file in ~/.zshrc.d/alii/*; do
+#   source "$file"
+# done
 
-# FUNCTIONS
-for file in ~/.zshrc.d/functions/*; do
-  source "$file"
-done
+# # FUNCTIONS
+# for file in ~/.zshrc.d/functions/*; do
+#   source "$file"
+# done
 
 # KEY STUFF
 for file in ~/.zshrc.d/keys/*; do
   source "$file"
 done
 
-# TOOLS
-for file in ~/.zshrc.d/tools/*; do
-  source "$file"
-done
+# # TOOLS
+# for file in ~/.zshrc.d/tools/*; do
+#   source "$file"
+# done
 
+# # VARIABLES
+# for file in ~/.zshrc.d/vars/*; do
+#   source "$file"
+# done
 
 
 
