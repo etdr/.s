@@ -25,5 +25,4 @@ alias dkrc='docker-compose'
 
 alias cat='bat'
 
-
-alias dt='dt-cli -c ~/.s/dt.toml'
+alias ip='ip -color=auto'

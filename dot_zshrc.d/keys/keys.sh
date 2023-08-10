@@ -23,10 +23,7 @@ key[Down]=${terminfo[kcud1]}
 [[ -n "${key[Insert]}"   ]]  && bindkey  "${key[Insert]}"   overwrite-mode
 [[ -n "${key[Delete]}"   ]]  && bindkey  "${key[Delete]}"   delete-char
 [[ -n "${key[Up]}"       ]]  && bindkey  "${key[Up]}"       up-line-or-beginning-search
-#bindkey  "^[[A"       up-line-or-beginning-search
-#bindkey  "^[OA"       history-beginning-search-backward
 [[ -n "${key[Down]}"     ]]  && bindkey  "${key[Down]}"     down-line-or-beginning-search
-#bindkey  "^[OB"     history-beginning-search-forward
 
 # Finally, make sure the terminal is in application mode, when zle is
 # active. Only then are the values from $terminfo valid.
