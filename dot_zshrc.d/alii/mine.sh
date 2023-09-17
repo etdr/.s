@@ -18,7 +18,7 @@ alias ppingg='prettyping 8.8.8.8'
 alias fixclock='sudo ntpdate pool.ntp.org; sudo hwclock --systohc'
 
 alias dkr='docker'
-alias dkrc='docker-compose'
+alias dkrc='docker compose'
 
 
 # PROGRAM SUBS

@@ -1,5 +1,5 @@
 [init]
-	defaultbranch = maine
+	defaultbranch = main
 [user]
 	email = eli@eli.td
 	name = Eli T. Drumm

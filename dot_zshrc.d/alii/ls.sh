@@ -2,7 +2,7 @@
 ## ls ## {{{
 #alias ls='ls -hF --color=auto'
 
-alias ls='exa'
+alias ls='eza'
 
 # recursive exa
 alias lr='ls -R'
