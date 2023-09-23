@@ -11,3 +11,13 @@ path=(
 )
 
 export PATH
+
+
+typeset -U fpath FPATH
+
+fpath=(
+  /home/winfield/.zshrc.d/fpath
+  $fpath
+)
+
+export FPATH

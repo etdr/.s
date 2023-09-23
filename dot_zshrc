@@ -1,6 +1,13 @@
 
 zstyle :compinstall filename '/home/winfield/.zshrc1'
 
+
+# VARIABLES
+for file in ~/.zshrc.d/vars/*; do
+  source "$file"
+done
+
+
 autoload -Uz compinit && compinit
 
 setopt autocd
@@ -55,20 +62,9 @@ for file in ~/.zshrc.d/tools/*; do
   source "$file"
 done
 
-# VARIABLES
-for file in ~/.zshrc.d/vars/*; do
-  source "$file"
-done
+
 
 
 
 # zsh-highlighting wants to be sourced last
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
-# pnpm
-export PNPM_HOME="/root/.local/share/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
-# pnpm end
