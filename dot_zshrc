@@ -62,8 +62,13 @@ for file in ~/.zshrc.d/tools/*; do
   source "$file"
 done
 
+# COMPLETIONS
+for file in ~/.zshrc.d/completions/*; do
+  source "$file"
+done
 
 
+dbus-update-activation-environment --systemd --all
 
 
 # zsh-highlighting wants to be sourced last

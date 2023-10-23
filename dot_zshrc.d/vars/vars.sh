@@ -25,6 +25,8 @@ export USE_GKE_GCLOUD_AUTH_PLUGIN=True
 
 export AMD_VULKAN_ICD=RADV
 
-
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 export MANROFFOPT="-c"
+
+export PIPENV_VENV_IN_PROJECT=true
+export PIPENV_DONT_LOAD_ENV=true

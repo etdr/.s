@@ -8,7 +8,6 @@ alias dmesg='dmesg -HL'
 
 ## New commands ## {{{
 alias da='date "+%A, %B %d, %Y [%T]"'
-alias du1='du --max-depth=1'
 #alias hist='history | grep'         # requires an argument
 #alias openports='ss --all --numeric --processes --ipv4 --ipv6'
 
@@ -16,3 +15,8 @@ alias du1='du --max-depth=1'
 
 
 alias pacmd='pactl'
+
+alias sudo='sudo '
+
+alias du='dust'
+alias du1='du -d 1'
