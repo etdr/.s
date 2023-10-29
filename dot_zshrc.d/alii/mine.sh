@@ -32,3 +32,7 @@ alias ip='ip -color=auto'
 alias ipinfo='curl "ipinfo.io/134.19.179.235?token=fa5c914772c9c3"'
 
 alias pip='echo "did you mean \`pipenv\`??"'
+
+alias p='plocate'
+
+alias sc='sudo systemctl'
