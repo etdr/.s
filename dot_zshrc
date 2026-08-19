@@ -1,6 +1,7 @@
 
-zstyle :compinstall filename '/home/winfield/.zshrc1'
-
+if [[ -n $SSH_CONNECTION && -z $ZELLIJ ]]; then
+  exec zellij attach --create alef
+fi
 
 # VARIABLES
 for file in ~/.zshrc.d/vars/*; do
@@ -16,30 +17,29 @@ setopt interactivecomments
 setopt incappendhistory
 setopt histignorealldups
 setopt extendedhistory
-export HISTFILE=~/.histfile
-export HISTSIZE=60000
-export SAVEHIST=60000
+HISTFILE=~/.histfile
+HISTSIZE=60000
+SAVEHIST=60000
 
 autoload -U promptinit && promptinit
 autoload -U +X bashcompinit && bashcompinit
 
-setopt promptsubst
-#PROMPT=$' %F{yellow}%~%f%B%F{cyan}\U300B %f%b'
-#PROMPT=$'%F{green}%m%f%B%F{cyan}\U300B %f%b%F{yellow}%~%f%B%F{cyan}\U2771 %f%b'
-PROMPT=$'%F{green}%(#.%K{red}%m%k.%m)%f%B%F{cyan}\U300B %f%b%F{yellow}%(4~.\U2025/%3~.%~)%f%B%F{cyan}\U2771 %f%b'
+# setopt promptsubst
+
+if [[ $TERM == linux ]]; then
+  local sep1='>' sep2='>'
+else
+  local sep1=$'\U300B' sep2=$'\U2771'
+fi
+PROMPT="%F{green}%(#.%K{red}%m%k.%m)%f%B%F{cyan}${sep1} %f%b%F{yellow}%(4~.…/%3~.%~)%f%B%F{cyan}${sep2} %f%b"
 
 # add \n between prompts/outputs
-precmd () { print '' }
-
-
+breathingroom () { print '' }
+add-zsh-hook precmd breathingroom
 
 
 source /usr/share/fzf/key-bindings.zsh
 source /usr/share/fzf/completion.zsh
-
-eval "$(zoxide init zsh)"
-
-
 
 
 # ALII (ALIASES)
@@ -68,31 +68,11 @@ for file in ~/.zshrc.d/completions/*; do
 done
 
 
-dbus-update-activation-environment --systemd --all
+# dbus-update-activation-environment --systemd --all
 
-
-
-if [ -n "$SSH_CONNECTION" ]; then
-    if [ -z "$TMUX" ]; then
-        tmux attach-session -t alef || tmux new-session -s alef
-        logout
-    fi
-fi
 
 
 # zsh-highlighting wants to be sourced last
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 
-# # >>> mamba initialize >>>
-# # !! Contents within this block are managed by 'mamba init' !!
-# export MAMBA_EXE='/mnt/frazil/genome/WGSExtractv4/bin/micromamba';
-# export MAMBA_ROOT_PREFIX='/home/winfield/micromamba';
-# __mamba_setup="$("$MAMBA_EXE" shell hook --shell zsh --root-prefix "$MAMBA_ROOT_PREFIX" 2> /dev/null)"
-# if [ $? -eq 0 ]; then
-#     eval "$__mamba_setup"
-# else
-#     alias micromamba="$MAMBA_EXE"  # Fallback on help from mamba activate
-# fi
-# unset __mamba_setup
-# # <<< mamba initialize <<<

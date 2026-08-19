@@ -30,3 +30,10 @@ export MANROFFOPT="-c"
 
 export PIPENV_VENV_IN_PROJECT=true
 export PIPENV_DONT_LOAD_ENV=true
+
+export BUN_INSTALL_BIN="$HOME/.local/bun/bin"
+
+# export WINEPREFIX=/home/winfield/.local/share/wineprefixes/m
+
+
+ZSH_HIGHLIGHT_HIGHLIGHTERS+=(main brackets)

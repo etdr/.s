@@ -15,7 +15,7 @@ alias wanip='dig +short myip.opendns.com @resolver1.opendns.com'
 alias pping='prettyping'
 alias ppingg='prettyping 8.8.8.8'
 
-alias fixclock='sudo ntpdate pool.ntp.org; sudo hwclock --systohc'
+# alias fixclock='sudo ntpdate pool.ntp.org; sudo hwclock --systohc'
 
 alias dkr='docker'
 alias dkrc='docker compose'
@@ -29,7 +29,7 @@ alias cat='bat'
 
 alias ip='ip -color=auto'
 
-alias ipinfo='curl "ipinfo.io/134.19.179.235?token=fa5c914772c9c3"'
+alias ipinfo='curl "ipinfo.io"'
 
 # alias pip='echo "did you mean \`pipenv\`??"'
 

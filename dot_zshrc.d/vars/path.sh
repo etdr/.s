@@ -2,11 +2,13 @@
 typeset -U path PATH
 path=(
   $path
-  /home/winfield/scripts
-  /home/winfield/bin
-  /home/winfield/apps
-  /home/winfield/.local/bin
-  /home/winfield/.cargo/bin
+  $HOME/scripts
+  $HOME/bin
+  $HOME/apps
+  $HOME/.local/bin
+  $HOME/.cargo/bin
+  $HOME/.local/bun/bin
+  $HOME/tools/wgsextract-cli
   .
 )
 
